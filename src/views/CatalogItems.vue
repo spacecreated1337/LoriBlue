@@ -1,9 +1,9 @@
 <template>
   <div class="mt-10 container mx-auto px-5 sm:px-0">
-    <i @click="back" class="fa-solid fa-arrow-left-long"></i>
-    <div
-      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
-    >
+    <div @click="back">
+      <i class="fa-solid fa-arrow-left-long cursor-pointer"></i>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
       <router-link
         :to="`${$route.path}/${product.name
           .split(' ')
@@ -30,79 +30,133 @@ export default {
       products: [
         {
           id: 1,
-          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          name: "Machined Pen1",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$256",
-          description:
-            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
-          options: "8 colors",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
           imageAlt:
-            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
         {
           id: 2,
-          name: `Basic Tee(${this.$route.params.shoestype})`,
+          name: "Machined Pen2",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$32",
-          description:
-            "Look like a visionary CEO and wear the same black t-shirt every day.",
-          options: "Black",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
-          imageAlt: "Front of plain black t-shirt.",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+          imageAlt:
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
         {
           id: 3,
-          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          name: "Machined Pen3",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$256",
-          description:
-            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
-          options: "8 colors",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
           imageAlt:
-            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
         {
           id: 4,
-          name: `Basic Tee(${this.$route.params.shoestype})`,
+          name: "Machined Pen4",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$32",
-          description:
-            "Look like a visionary CEO and wear the same black t-shirt every day.",
-          options: "Black",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
-          imageAlt: "Front of plain black t-shirt.",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+          imageAlt:
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
         {
           id: 5,
-          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          name: "Machined Pen4",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$256",
-          description:
-            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
-          options: "8 colors",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
           imageAlt:
-            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
         {
           id: 6,
-          name: `Basic Tee(${this.$route.params.shoestype})`,
+          name: "Machined Pen4",
+          color: "Black",
+          price: "$35",
           href: "#",
-          price: "$32",
-          description:
-            "Look like a visionary CEO and wear the same black t-shirt every day.",
-          options: "Black",
           imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
-          imageAlt: "Front of plain black t-shirt.",
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+          imageAlt:
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
         },
+        {
+          id: 7,
+          name: "Machined Pen4",
+          color: "Black",
+          price: "$35",
+          href: "#",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+          imageAlt:
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
+        },
+        {
+          id: 8,
+          name: "Machined Pen4",
+          color: "Black",
+          price: "$35",
+          href: "#",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+          imageAlt:
+            "Black machined steel pen with hexagonal grip and small white logo at top.",
+          availableColors: [
+            { name: "Black", colorBg: "#111827" },
+            { name: "Brass", colorBg: "#FDE68A" },
+            { name: "Chrome", colorBg: "#E5E7EB" },
+          ],
+        },
+        // More products...
       ],
     };
   },

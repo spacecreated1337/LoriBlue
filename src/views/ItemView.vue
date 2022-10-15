@@ -1,6 +1,9 @@
 <template>
   <div class="bg-white">
     <div class="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div @click="back">
+        <i class="fa-solid fa-arrow-left-long cursor-pointer"></i>
+      </div>
       <div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
         <!-- Image gallery -->
         <TabGroup as="div" class="flex flex-col-reverse">
@@ -340,6 +343,11 @@ export default {
       product,
       selectedColor,
     };
+  },
+  methods: {
+    back() {
+      this.$router.go(-1);
+    },
   },
 };
 </script>
