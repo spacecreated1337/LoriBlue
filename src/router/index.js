@@ -1,6 +1,6 @@
 import {
   createRouter,
-  createWebHistory
+  createWebHashHistory
 } from 'vue-router'
 import CatalogView from "@/views/CatalogView";
 import CatalogItems from "@/views/CatalogItems";
@@ -23,8 +23,13 @@ const routes = [{
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHashHistory(process.env.BASE_URL),
+  routes,
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
