@@ -1,9 +1,18 @@
 <template>
   <div class="mt-10 container mx-auto px-5 sm:px-0">
     <i @click="back" class="fa-solid fa-arrow-left-long"></i>
-    <div class="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 xl:gap-x-14 xl:gap-y-14 gap-5 sm:gap-1">
-      <router-link :to="`${$route.path}/${item.name}`" v-for="(item, idx) in items" :key="idx">
-        <shop-item :category-item="item" />
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+    >
+      <router-link
+        :to="`${$route.path}/${product.name
+          .split(' ')
+          .join('-')
+          .toLowerCase()}`"
+        v-for="product in products"
+        :key="product.id"
+      >
+        <shop-item :product="product" />
       </router-link>
     </div>
   </div>
@@ -12,36 +21,95 @@
 import ShopItem from "@/components/ShopItem";
 
 export default {
-  name: 'catalogtype',
+  name: "CatalogItems",
   components: {
-    ShopItem
+    ShopItem,
   },
   data() {
     return {
-      items: [
-        {name: `${this.$route.params.shoestype}-1`,
-          img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-2`,
-          img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-3`,
-        img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-4`,
-        img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-5`,
-        img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-6`,
-        img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-7`,
-        img: require('@/assets/img/tufli.jpg')},
-        {name: `${this.$route.params.shoestype}-8`,
-        img: require('@/assets/img/tufli.jpg')},
-      ]
-  }
+      products: [
+        {
+          id: 1,
+          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$256",
+          description:
+            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
+          options: "8 colors",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+          imageAlt:
+            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+        },
+        {
+          id: 2,
+          name: `Basic Tee(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$32",
+          description:
+            "Look like a visionary CEO and wear the same black t-shirt every day.",
+          options: "Black",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+          imageAlt: "Front of plain black t-shirt.",
+        },
+        {
+          id: 3,
+          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$256",
+          description:
+            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
+          options: "8 colors",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+          imageAlt:
+            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+        },
+        {
+          id: 4,
+          name: `Basic Tee(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$32",
+          description:
+            "Look like a visionary CEO and wear the same black t-shirt every day.",
+          options: "Black",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+          imageAlt: "Front of plain black t-shirt.",
+        },
+        {
+          id: 5,
+          name: `Basic Tee 8-Pack(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$256",
+          description:
+            "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
+          options: "8 colors",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
+          imageAlt:
+            "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+        },
+        {
+          id: 6,
+          name: `Basic Tee(${this.$route.params.shoestype})`,
+          href: "#",
+          price: "$32",
+          description:
+            "Look like a visionary CEO and wear the same black t-shirt every day.",
+          options: "Black",
+          imageSrc:
+            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
+          imageAlt: "Front of plain black t-shirt.",
+        },
+      ],
+    };
   },
   methods: {
     back() {
-      this.$router.go(-1)
-    }
-  }
-}
+      this.$router.go(-1);
+    },
+  },
+};
 </script>

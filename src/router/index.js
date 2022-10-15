@@ -1,26 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 import CatalogView from "@/views/CatalogView";
 import CatalogItems from "@/views/CatalogItems";
 import ItemView from "@/views/ItemView"
-const routes = [
-  {
+const routes = [{
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/catalog',
-    name: 'catalog',
+    name: 'CatalogView',
     component: CatalogView,
   },
   {
-    path: '/catalog/:shoestype',
-    name: 'catalogtype',
+    path: '/:shoestype',
+    name: 'CatalogItems',
     component: CatalogItems,
   },
   {
-    path: '/catalog/:shoestype/:item',
+    path: '/:shoestype/:item',
     name: 'ItemView',
     component: ItemView,
   },

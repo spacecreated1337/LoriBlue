@@ -1,54 +1,68 @@
 <template>
   <div class="mt-10 container mx-auto px-5 sm:px-0">
-    <div class="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 xl:gap-x-14 xl:gap-y-14 gap-5 sm:gap-1">
-      <router-link :to="`catalog/${item.name.toLowerCase()}`" v-for="(item, idx) in categoryItems" :key="idx">
-        <shop-item :category-item="item" />
-      </router-link>
+    <div class="bg-white">
+      <div
+        class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"
+      >
+        <h2 class="sr-only">Products</h2>
+
+        <div
+          class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+        >
+          <router-link
+            :to="`${$route.path}${product.name
+              .split(' ')
+              .join('-')
+              .toLowerCase()}`"
+            v-for="product in typeOfShoes"
+            :key="product.id"
+          >
+            <div class="group relative bg-white flex flex-col overflow-hidden">
+              <img :src="product.img" :alt="product.name" />
+              <p class="text-center">{{ product.name }}</p>
+            </div>
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import ShopItem from "@/components/ShopItem"
+import ShopItem from "@/components/ShopItem";
 export default {
   name: "CatalogView",
   components: {
-    ShopItem
+    ShopItem,
   },
   data() {
     return {
-      categoryItems: [{
-        name: 'Tufli',
-        img: require('@/assets/img/tufli.jpg')
-      },
+      typeOfShoes: [
         {
-          name: 'Sapogi',
-          img: require('@/assets/img/sapogi.jpg')
+          name: "Sapogi",
+          img: require("@/assets/img/sapogi.jpg"),
         },
         {
-          name: 'Botinki',
-          img: require('@/assets/img/tufli.jpg')
+          name: "Botinki",
+          img: require("@/assets/img/tufli.jpg"),
         },
         {
-          name: 'Bosonojki',
-          img: require('@/assets/img/sapogi.jpg')
+          name: "Tufli",
+          img: require("@/assets/img/sapogi.jpg"),
         },
         {
-          name: 'Baletki',
-          img: require('@/assets/img/tufli.jpg')
+          name: "Baletki",
+          img: require("@/assets/img/tufli.jpg"),
         },
         {
-          name: 'Sandali',
-          img: require('@/assets/img/sapogi.jpg')
+          name: "Bosonojki",
+          img: require("@/assets/img/sapogi.jpg"),
         },
         {
-          name: 'Loferi',
-          img: require('@/assets/img/tufli.jpg')
+          name: "Sandalii",
+          img: require("@/assets/img/tufli.jpg"),
         },
-        {
-          name: 'Krossovki',
-          img: require('@/assets/img/sapogi.jpg')
-        }]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
