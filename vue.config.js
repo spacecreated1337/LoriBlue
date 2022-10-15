@@ -4,5 +4,5 @@ const {
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: process.env.NODE_ENV === 'production' ?
-    '/LoriBlue/' : '/',
+    '/LoriBlue/catalog' : '/',
 })
