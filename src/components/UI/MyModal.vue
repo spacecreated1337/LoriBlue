@@ -9,7 +9,7 @@
               <p>LastName: {{ user.last_name }}</p>
               <p>Username: {{ user.username }}</p>
               <p>UserId: {{ user.id }}</p>
-              <p>{{ user }}{{ JSON.parse(user) }}</p>
+              <p>{{ user }}</p>
             </slot>
             <button class="modal-default-button" @click="$emit('close')">
               OK
