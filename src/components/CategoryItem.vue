@@ -11,7 +11,7 @@
             class="w-full h-full object-center object-cover group-hover:opacity-75"
           />
         </div>
-        <div class="mt-6">
+        <div class="mt-4">
           <p class="text-sm text-gray-500">
             {{ product.color }}
           </p>

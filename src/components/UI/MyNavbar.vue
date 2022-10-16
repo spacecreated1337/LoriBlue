@@ -1,6 +1,8 @@
 <template>
   <div class="shadow-lg accent-gray-400 px-5 sm:px-0 relative z-10">
-    <nav class="container mx-auto flex justify-between items-center py-3">
+    <nav
+      class="container mx-auto flex justify-between items-center sm:py-3 py-2"
+    >
       <div>
         <img
           class="sm:w-24 w-14"
@@ -8,12 +10,15 @@
           alt="LoriBlue logo"
         />
       </div>
+      <div class="hidden sm:block">
+        <h2
+          class="lg:text-3xl sm:text-2xl text-base font-extrabold tracking-tight text-center sm:text-left text-gray-900"
+        >
+          Магазин женской обуви LoriBlue
+        </h2>
+      </div>
       <div>
         <router-link to="/">Catalog</router-link>
-      </div>
-      <div class="flex-col items-end sm:flex hidden">
-        <a href="">Позвонить по телефону: +9981337228</a>
-        <a href="">Наш телеграм: @1337228</a>
       </div>
     </nav>
   </div>

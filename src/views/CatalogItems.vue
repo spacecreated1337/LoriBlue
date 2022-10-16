@@ -12,18 +12,18 @@
         v-for="product in products"
         :key="product.id"
       >
-        <shop-item :product="product" />
+        <Category-item :product="product" />
       </router-link>
     </div>
   </div>
 </template>
 <script>
-import ShopItem from "@/components/ShopItem";
+import CategoryItem from "@/components/CategoryItem";
 
 export default {
   name: "CatalogItems",
   components: {
-    ShopItem,
+    CategoryItem,
   },
   data() {
     return {
