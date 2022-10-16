@@ -5,10 +5,18 @@
         <div class="modal-container">
           <div class="modal-body">
             <slot name="body">
-              <p>Name: {{ user.first_name }}</p>
-              <p>LastName: {{ user.last_name }}</p>
-              <p>Username: {{ user.username }}</p>
-              <p>UserId: {{ user.id }}</p>
+              <p>Name: {{ user.user.first_name }}</p>
+              <p>LastName: {{ user.user.last_name }}</p>
+              <p>Username: {{ user.user.username }}</p>
+              <p>UserId: {{ user.user.id }}</p>
+              <p>{{ user }}</p>
+            </slot>
+          </div>
+          <div class="modal-footer">
+            <slot name="footer">
+              <button class="modal-default-button" @click="$emit('close')">
+                OK
+              </button>
             </slot>
           </div>
         </div>
