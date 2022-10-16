@@ -8,7 +8,7 @@
   </div>
   <Teleport to="body">
     <!-- use the modal component, pass in the prop -->
-    <my-modal :show="showModal" @close="showModal = false">
+    <my-modal :user="user" :show="showModal" @close="showModal = false">
       <template #header>
         <h3>custom header</h3>
       </template>
@@ -19,6 +19,12 @@
 import MyModal from "@/components/UI/MyModal.vue";
 
 export default {
+  props: {
+    user: {
+      type: Object,
+      required: false,
+    },
+  },
   components: {
     MyModal,
   },

@@ -1,7 +1,7 @@
 <template>
   <my-navbar />
   <router-view />
-  <user-info-button />
+  <user-info-button :user="user" />
 </template>
 <script>
 import MyNavbar from "./components/UI/MyNavbar.vue";
@@ -11,10 +11,15 @@ export default {
     MyNavbar,
     UserInfoButton,
   },
-  created() {
+  mounted() {
     let tg = window.Telegram.WebApp;
     console.log(tg);
-    tg.initDataUnsafe;
+    this.user = tg.initDataUnsafe;
+  },
+  data() {
+    return {
+      user: null,
+    };
   },
 };
 </script>

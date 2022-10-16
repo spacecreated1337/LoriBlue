@@ -13,7 +13,7 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              default footer
+              {{ user }}
               <button class="modal-default-button" @click="$emit('close')">
                 OK
               </button>
@@ -28,6 +28,10 @@
 export default {
   props: {
     show: Boolean,
+    user: {
+      type: Object,
+      required: false,
+    },
   },
 };
 </script>
