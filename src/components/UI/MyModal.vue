@@ -4,16 +4,18 @@
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-body">
-            <slot name="body">
-              <p>Name: {{ user.first_name }}</p>
-              <p>LastName: {{ user.last_name }}</p>
-              <p>Username: {{ user.username }}</p>
-              <p>UserId: {{ user.id }}</p>
-              <p>{{ user }}</p>
-            </slot>
-            <button class="modal-default-button" @click="$emit('close')">
-              OK
-            </button>
+            <div v-if="userInfo">
+              <slot name="body">
+                <p>Name: {{ userInfo.user.first_name }}</p>
+                <p>LastName: {{ userInfo.user.last_name }}</p>
+                <p>Username: {{ userInfo.user.username }}</p>
+                <p>UserId: {{ userInfo.user.id }}</p>
+                <p>{{ userInfo }}</p>
+              </slot>
+              <button class="modal-default-button" @click="$emit('close')">
+                OK
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -24,7 +26,7 @@
 export default {
   props: {
     show: Boolean,
-    user: {
+    userInfo: {
       type: Object,
       required: false,
     },

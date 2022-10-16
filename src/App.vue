@@ -1,7 +1,7 @@
 <template>
   <my-navbar />
   <router-view />
-  <user-info-button :user="user" />
+  <user-info-button :userInfo="userInfo" />
 </template>
 <script>
 import MyNavbar from "./components/UI/MyNavbar.vue";
@@ -13,13 +13,12 @@ export default {
   },
   mounted() {
     let tg = window.Telegram.WebApp;
-    console.log(tg);
     tg.expand();
-    this.user = tg.initDataUnsafe;
+    this.userInfo = tg.initDataUnsafe;
   },
   data() {
     return {
-      user: null,
+      userInfo: null,
     };
   },
 };
