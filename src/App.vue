@@ -1,12 +1,20 @@
 <template>
   <my-navbar />
   <router-view />
+  <user-info-button />
 </template>
 <script>
 import MyNavbar from "./components/UI/MyNavbar.vue";
+import UserInfoButton from "@/components/UserInfoButton.vue";
 export default {
   components: {
     MyNavbar,
+    UserInfoButton,
+  },
+  created() {
+    let tg = window.Telegram.WebApp;
+    console.log(tg);
+    tg.initDataUnsafe;
   },
 };
 </script>
@@ -27,5 +35,8 @@ nav {
       color: #42b983;
     }
   }
+}
+body {
+  background: #ffffff;
 }
 </style>
