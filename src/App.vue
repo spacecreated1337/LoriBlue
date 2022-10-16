@@ -14,6 +14,7 @@ export default {
   mounted() {
     let tg = window.Telegram.WebApp;
     console.log(tg);
+    tg.expand();
     this.user = tg.initDataUnsafe;
   },
   data() {

@@ -3,20 +3,12 @@
     <div v-if="show" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <div class="modal-header">
-            <slot name="header">default header</slot>
-          </div>
-
           <div class="modal-body">
-            <slot name="body">default body</slot>
-          </div>
-
-          <div class="modal-footer">
-            <slot name="footer">
-              {{ user }}
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
+            <slot name="body">
+              <p>Name: {{ user.first_name }}</p>
+              <p>LastName: {{ user.last_name }}</p>
+              <p>Username: {{ user.username }}</p>
+              <p>UserId: {{ user.id }}</p>
             </slot>
           </div>
         </div>

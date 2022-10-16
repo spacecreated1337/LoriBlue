@@ -9,9 +9,6 @@
   <Teleport to="body">
     <!-- use the modal component, pass in the prop -->
     <my-modal :user="user" :show="showModal" @close="showModal = false">
-      <template #header>
-        <h3>custom header</h3>
-      </template>
     </my-modal>
   </Teleport>
 </template>
